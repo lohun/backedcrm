@@ -123,10 +123,12 @@ export default function SmartEmailEditor({
       <EditorContent
         editor={editor}
         className="flex-1 overflow-auto p-4"
+        
         style={{
           border: '1px solid #e5e7eb',
           borderTop: 'none',
           minHeight: '300px',
+          color: "#333"
         }}
       />
     </div>

@@ -232,13 +232,13 @@ export default function SplitPaneEmailComposer({
       <div className="flex-1 flex flex-col gap-4">
         <Card className="flex-1 flex flex-col">
           <CardHeader className="border-b">
-            <CardTitle>Email Composer</CardTitle>
+            <CardTitle style={{color: "#333"}}>Email Composer</CardTitle>
             <CardDescription>Write your email content with optional CTA button</CardDescription>
           </CardHeader>
           <CardContent className="flex-1 flex flex-col p-4 overflow-hidden">
             <div className="space-y-4 flex-1 flex flex-col">
               <div>
-                <Label htmlFor="subject">Subject Line</Label>
+                <Label style={{color: "#333"}} htmlFor="subject">Subject Line</Label>
                 <Input
                   id="subject"
                   placeholder="Enter email subject"
@@ -249,12 +249,13 @@ export default function SplitPaneEmailComposer({
               </div>
 
               <div className="flex-1 overflow-hidden">
-                <Label>Email Content</Label>
+                <Label style={{color: "#333"}}>Email Content</Label>
                 <div className="border rounded-lg overflow-hidden h-full">
                   <SmartEmailEditor
                     content={emailContent}
                     onChange={setEmailContent}
                     placeholder="Start writing your email..."
+                    
                   />
                 </div>
               </div>
@@ -313,7 +314,7 @@ export default function SplitPaneEmailComposer({
             <TabsContent value="cta" className="space-y-4">
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-lg">Call-to-Action</CardTitle>
+                  <CardTitle style={{color: "#333"}} className="text-lg">Call-to-Action</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-center gap-2">
@@ -323,8 +324,9 @@ export default function SplitPaneEmailComposer({
                       checked={hasCta}
                       onChange={(e) => setHasCta(e.target.checked)}
                       className="h-4 w-4"
+                     style={{color: "#333"}}
                     />
-                    <Label htmlFor="enable-cta" className="cursor-pointer flex-1">
+                    <Label style={{color: "#333"}} htmlFor="enable-cta" className="cursor-pointer flex-1">
                       Enable CTA Button
                     </Label>
                   </div>
@@ -373,8 +375,8 @@ export default function SplitPaneEmailComposer({
               {/* Proofreader */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-lg flex items-center gap-2">
-                    <Sparkles className="h-4 w-4" />
+                  <CardTitle style={{color: "#333"}} className="text-lg flex items-center gap-2">
+                    <Sparkles style={{color: "#333"}} className="h-4 w-4" />
                     Proofreader
                   </CardTitle>
                 </CardHeader>
@@ -382,7 +384,7 @@ export default function SplitPaneEmailComposer({
                   <Button
                     onClick={handleProofread}
                     disabled={proofreadingLoading || !emailContent.trim()}
-                    className="w-full"
+                    className="w-full bg-muted"
                   >
                     {proofreadingLoading ? 'Analyzing...' : 'Proofread Email'}
                   </Button>
@@ -451,13 +453,13 @@ export default function SplitPaneEmailComposer({
               {/* Social Media Generator */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-lg">Social Summaries</CardTitle>
+                  <CardTitle style={{color: "#333"}} className="text-lg">Social Summaries</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <Button
                     onClick={handleGenerateSocial}
                     disabled={socialLoading || !emailContent.trim()}
-                    className="w-full"
+                    className="w-full bg-muted"
                   >
                     {socialLoading ? 'Generating...' : 'Generate Social Posts'}
                   </Button>
