@@ -264,9 +264,10 @@ export default function SplitPaneEmailComposer({
                     </CardContent>
                 </Card>
 
+
                 {/* Broadcast Status */}
                 {broadcastResult && (
-                    <Alert className="border-green-200 bg-green-50">
+                    <Alert className="border-green-200 bg-green-50" onClick={(e) => {setBroadcastResult(!broadcastResult)}} style={{position: 'absolute', top: "20vh", left: "0"}}>
                         <CheckCircle className="h-4 w-4 text-green-600" />
                         <AlertDescription className="text-green-800">
                             {broadcastResult.message} • Sent to {broadcastResult.recipient_count || 'multiple'}{' '}
@@ -276,7 +277,7 @@ export default function SplitPaneEmailComposer({
                 )}
 
                 {broadcastError && (
-                    <Alert className="border-red-200 bg-red-50">
+                    <Alert className="border-red-200 bg-red-50" onClick={(e) => {setBroadcastError(!broadcastError)}}  style={{position: 'absolute', top: "20vh", left: "0"}}>
                         <AlertCircle className="h-4 w-4 text-red-600" />
                         <AlertDescription className="text-red-800">
                             {broadcastError.message}
@@ -385,6 +386,7 @@ export default function SplitPaneEmailComposer({
                                     <Button
                                         onClick={handleProofread}
                                         disabled={proofreadingLoading || !emailContent.trim()}
+                                        className="w-full"
                                         variant='outline'
                                     >
                                         {proofreadingLoading ? 'Analyzing...' : 'Proofread Email'}
