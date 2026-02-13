@@ -22,12 +22,9 @@ export default async function DashboardLayout({
     .single()
 
   const navigation = [
-    { name: 'Dashboard', href: '/dashboard', icon: '📊' },
-    { name: 'Alumni Directory', href: '/dashboard/alumni', icon: '👥' },
-    { name: 'Posts & Campaigns', href: '/dashboard/posts', icon: '📧' },
-    // { name: 'Projects', href: '/dashboard/projects', icon: '🎯' },
-    // { name: 'Messages', href: '/dashboard/messages', icon: '💬' },
-    // { name: 'Settings', href: '/dashboard/settings', icon: '⚙️' },
+    { name: 'Dashboard', href: '/dashboard' },
+    { name: 'Alumni Directory', href: '/dashboard/alumni' },
+    { name: 'Posts & Campaigns', href: '/dashboard/posts' },
   ]
 
   return (
@@ -74,7 +71,6 @@ export default async function DashboardLayout({
                 href={item.href}
                 className="flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors border border-transparent hover:border-gray-200"
               >
-                <span className="text-lg">{item.icon}</span>
                 {item.name}
               </Link>
             ))}
@@ -90,7 +86,6 @@ export default async function DashboardLayout({
                 href={item.href}
                 className="flex flex-col items-center gap-1 rounded-lg py-3 px-4 text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors"
               >
-                <span className="text-lg">{item.icon}</span>
                 <span className="hidden sm:inline">{item.name}</span>
               </Link>
             ))}

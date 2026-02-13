@@ -149,7 +149,7 @@ export function AlumniTable({ data, onEdit, onDelete, isLoading }: AlumniTablePr
       {/* Table */}
       <div className="rounded-md border">
         <table className="w-full">
-          <thead className="bg-muted">
+          <thead className="bg-muted text-light" style={{color: "white"}}>
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
@@ -171,7 +171,7 @@ export function AlumniTable({ data, onEdit, onDelete, isLoading }: AlumniTablePr
           </thead>
           <tbody>
             {table.getRowModel().rows.map((row) => (
-              <tr key={row.id} className="border-t hover:bg-muted/50">
+              <tr key={row.id} className="border-t">
                 {row.getVisibleCells().map((cell) => (
                   <td key={cell.id} className="px-4 py-3">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}

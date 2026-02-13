@@ -56,9 +56,9 @@ export default function PostsDataTable({ initialPosts }: PostsDataTableProps) {
   const getStatusBadge = (status: string) => {
     switch (status) {
       case 'draft':
-        return <Badge variant="outline" className="bg-gray-100">Draft</Badge>;
+        return <Badge variant="outline" className="bg-gray-600">Draft</Badge>;
       case 'published':
-        return <Badge variant="outline" className="bg-blue-100 text-blue-800">Published</Badge>;
+        return <Badge variant="outline" className="bg-blue-500">Published</Badge>;
       case 'sent':
         return <Badge className="bg-green-600">Sent</Badge>;
       default:
@@ -81,7 +81,7 @@ export default function PostsDataTable({ initialPosts }: PostsDataTableProps) {
   };
 
   return (
-    <div className="container mx-auto py-6">
+    <div className="container mx-auto py-6" style={{color: "#333"}}>
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div>
@@ -90,7 +90,7 @@ export default function PostsDataTable({ initialPosts }: PostsDataTableProps) {
         </div>
         <Button
           onClick={handleCreatePost}
-          className="bg-blue-600 hover:bg-blue-700"
+          style={{backgroundColor: "#333", color: "white", cursor: "pointer"}}
           size="lg"
         >
           <Plus className="h-4 w-4 mr-2" />
@@ -99,7 +99,7 @@ export default function PostsDataTable({ initialPosts }: PostsDataTableProps) {
       </div>
 
       {/* Posts Table */}
-      <Card>
+      <Card style={{color: "#333"}}>
         <CardHeader>
           <CardTitle>All Posts ({posts.length})</CardTitle>
         </CardHeader>

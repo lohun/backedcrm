@@ -231,7 +231,6 @@ export async function broadcastPost(
           },
         });
 
-        console.log(result.response.errored)
 
         const messageId = result?.body?.messageId;
 
@@ -299,6 +298,11 @@ export async function broadcastPost(
         resumeToken: postId, // Allow retry
       });
     }
+
+    await supabase
+          .from('posts')
+          .update({ status: 'sent' })
+          .eq('id', postId)
 
     // 8. Full success
     return createSuccessResponse({

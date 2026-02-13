@@ -104,7 +104,7 @@ export function AlumniDirectory({ orgId, adminId }: AlumniDirectoryProps) {
         </div>
         <div className="flex gap-3">
           <Button
-            variant="outline"
+            variant="default"
             onClick={() => setIsBulkModalOpen(true)}
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

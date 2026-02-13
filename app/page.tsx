@@ -20,7 +20,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="h-8 w-8 bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">BED</span>
+              <span className="text-white font-bold text-sm">B</span>
             </div>
             <span className="font-bold text-lg text-gray-900">BackED</span>
           </div>

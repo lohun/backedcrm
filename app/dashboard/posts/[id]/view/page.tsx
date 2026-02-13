@@ -57,7 +57,7 @@ export default async function PostViewPage({
   };
 
   return (
-    <div className="container mx-auto py-6">
+    <div className="container mx-auto py-6" style={{color: "#333"}}>
       {/* Header with Back Button */}
       <div className="flex items-center justify-between mb-6">
         <Link href="/dashboard/posts">
@@ -68,7 +68,7 @@ export default async function PostViewPage({
         </Link>
         <div className="flex gap-2">
           <Link href={`/dashboard/email-composer?postId=${id}&mode=edit`}>
-            <Button className="bg-blue-600 hover:bg-blue-700">
+            <Button>
               <Edit2 className="h-4 w-4 mr-2" />
               Edit Post
             </Button>
@@ -84,9 +84,9 @@ export default async function PostViewPage({
             <CardHeader>
               <div className="flex items-start justify-between">
                 <div>
-                  <CardTitle className="text-2xl">{post.title || 'Untitled Post'}</CardTitle>
+                  <CardTitle style={{color: "#333"}} className="text-2xl">{post.title || 'Untitled Post'}</CardTitle>
                   <p className="text-sm text-gray-500 mt-2">
-                    Created on {new Date(post.created_at).toLocaleDateString()}
+                    {/* Created on {new Date(post.created_at).toLocaleDateString()} */}
                   </p>
                 </div>
                 <Badge className={getStatusColor(post.post_status)}>
@@ -135,7 +135,7 @@ export default async function PostViewPage({
           {/* Statistics Card */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-lg">Statistics</CardTitle>
+              <CardTitle style={{color: "#333"}} className="text-lg">Statistics</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               {stats ? (
@@ -181,7 +181,7 @@ export default async function PostViewPage({
           {/* Post Details Card */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-lg">Details</CardTitle>
+              <CardTitle style={{color: "#333"}} className="text-lg">Details</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div>
